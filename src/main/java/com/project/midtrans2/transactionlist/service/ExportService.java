@@ -1,44 +1,18 @@
 package com.project.midtrans2.transactionlist.service;
 
-
-import com.project.midtrans2.transactionlist.model.*;
+import com.project.midtrans2.transactionlist.model.GeneralInfo;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import com.opencsv.CSVWriter;
 import org.springframework.stereotype.Service;
 
-import java.io.FileOutputStream;
-import java.io.FileWriter;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class ExportService {
 
-    public void exportToCSV(List<GeneralInfo> generalInfoList, String filePath) throws IOException {
-        try (CSVWriter writer = new CSVWriter(new FileWriter(filePath))) {
-            String[] header = {"Date & Time", "Order ID", "Transaction ID", "Transaction Status", "Channel",
-                    "Receiver's Account Number", "Transaction Type", "Amount"};
-            writer.writeNext(header);
-
-            for (GeneralInfo info : generalInfoList) {
-                String[] data = {
-                        info.getDateTime().toString(),
-                        info.getOrderId(),
-                        info.getTransactionId(),
-                        info.getTransactionStatus(),
-                        info.getChannel(),
-                        info.getReceiverAccountNumber(),
-                        info.getTransactionType(),
-                        info.getAmount().toString()
-                };
-                writer.writeNext(data);
-            }
-        }
-    }
-
-    public void exportToExcel(List<GeneralInfo> generalInfoList, String filePath) throws IOException {
+    public byte[] exportToExcel(List<GeneralInfo> generalInfoList) throws IOException {
         Workbook workbook = new XSSFWorkbook();
         Sheet sheet = workbook.createSheet("General Info");
 
@@ -64,10 +38,12 @@ public class ExportService {
             row.createCell(7).setCellValue(info.getAmount().toString());
         }
 
-        // Write to file
-        try (FileOutputStream fileOut = new FileOutputStream(filePath)) {
-            workbook.write(fileOut);
-        }
+        // Menulis workbook ke output stream
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        workbook.write(out);
         workbook.close();
+
+        // Mengembalikan byte array dari file Excel
+        return out.toByteArray();
     }
 }
