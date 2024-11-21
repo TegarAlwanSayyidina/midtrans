@@ -1,7 +1,7 @@
-package com.project.midtrans2.paymentlink.controller;
+package com.project.midtrans2.transaciton.controller;
 
-import com.project.midtrans2.paymentlink.model.PaymentLink;
-import com.project.midtrans2.paymentlink.service.PaymentLinkService;
+import com.project.midtrans2.transaciton.model.PaymentLink;
+import com.project.midtrans2.transaciton.service.PaymentLinkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

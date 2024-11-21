@@ -1,6 +1,7 @@
 package com.project.midtrans2.transactionlist.model;
 
 import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 
 @Entity
@@ -29,7 +30,9 @@ public class Transaction {
     @Column(name = "customer_email", nullable = false)
     private String customerEmail;
 
+    // Menambahkan anotasi JsonFormat untuk mengubah format tanggal
     @Column(name = "date_time", nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd")  // Menampilkan hanya tanggal tanpa waktu
     private LocalDateTime dateTime;
 
     @PrePersist

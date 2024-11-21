@@ -5,6 +5,7 @@ import com.project.midtrans2.transactionlist.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
@@ -20,8 +21,10 @@ public class TransactionService {
         return transactionRepository.findAll();
     }
 
-    // Menyimpan transaksi baru
+    // Menyimpan transaksi baru dengan hanya tanggal, tanpa jam, menit, detik
     public Transaction saveTransaction(Transaction transaction) {
+        // Mengatur dateTime hanya menggunakan tahun, bulan, dan tanggal
+        transaction.setDateTime(LocalDate.now().atStartOfDay());
         return transactionRepository.save(transaction);
     }
 
@@ -80,6 +83,8 @@ public class TransactionService {
         }
         return getTransactionsByType(transactionType); // Default behavior jika bukan Payment atau Withdrawal
     }
+
+    // Mendapatkan transaksi berdasarkan rentang waktu
     public List<Transaction> getTransactionsByDateTime(LocalDateTime dateTime) {
         return transactionRepository.findByDateTime(dateTime);
     }
@@ -91,31 +96,36 @@ public class TransactionService {
 
     // Mendapatkan transaksi yang terjadi hari ini
     public List<Transaction> getTransactionsToday() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime startOfDay = now.toLocalDate().atStartOfDay();
-        return transactionRepository.findByDateTimeBetween(startOfDay, now);
+        LocalDate now = LocalDate.now();
+        LocalDateTime startOfDay = now.atStartOfDay();
+        return transactionRepository.findByDateTimeBetween(startOfDay, now.atTime(23, 59, 59));
     }
 
     // Mendapatkan transaksi yang terjadi kemarin
     public List<Transaction> getTransactionsYesterday() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime startOfYesterday = now.minusDays(1).toLocalDate().atStartOfDay();
-        LocalDateTime endOfYesterday = startOfYesterday.plusDays(1).minusNanos(1);
-        return transactionRepository.findByDateTimeBetween(startOfYesterday, endOfYesterday);
+        LocalDate now = LocalDate.now();
+        LocalDate yesterday = now.minusDays(1);
+        return transactionRepository.findByDateTimeBetween(yesterday.atStartOfDay(), yesterday.atTime(23, 59, 59));
     }
-
 
     // Mendapatkan transaksi yang terjadi dalam 7 hari terakhir
     public List<Transaction> getTransactionsLast7Days() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime startOfPeriod = now.minusDays(7).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        return transactionRepository.findByDateTimeBetween(startOfPeriod, now);
+        LocalDate now = LocalDate.now();
+        LocalDate startOfPeriod = now.minusDays(7);
+        return transactionRepository.findByDateTimeBetween(startOfPeriod.atStartOfDay(), now.atTime(23, 59, 59));
     }
 
     // Mendapatkan transaksi yang terjadi dalam 30 hari terakhir
     public List<Transaction> getTransactionsLast30Days() {
-        LocalDateTime now = LocalDateTime.now();
-        LocalDateTime startOfPeriod = now.minusDays(30).withHour(0).withMinute(0).withSecond(0).withNano(0);
-        return transactionRepository.findByDateTimeBetween(startOfPeriod, now);
+        LocalDate now = LocalDate.now();
+        LocalDate startOfPeriod = now.minusDays(30);
+        return transactionRepository.findByDateTimeBetween(startOfPeriod.atStartOfDay(), now.atTime(23, 59, 59));
+    }
+
+    // Mendapatkan transaksi yang terjadi dalam bulan ini
+    public List<Transaction> getTransactionsThisMonth() {
+        LocalDate now = LocalDate.now();
+        LocalDate startOfMonth = now.withDayOfMonth(1);
+        return transactionRepository.findByDateTimeBetween(startOfMonth.atStartOfDay(), now.atTime(23, 59, 59));
     }
 }

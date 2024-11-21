@@ -1,6 +1,6 @@
-package com.project.midtrans2.paymentlink.repository;
+package com.project.midtrans2.transaciton.repository;
 
-import com.project.midtrans2.paymentlink.model.PaymentLink;
+import com.project.midtrans2.transaciton.model.PaymentLink;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

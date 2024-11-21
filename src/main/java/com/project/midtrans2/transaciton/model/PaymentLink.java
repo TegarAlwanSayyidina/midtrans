@@ -1,4 +1,4 @@
-package com.project.midtrans2.paymentlink.model;
+package com.project.midtrans2.transaciton.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;

@@ -1,7 +1,7 @@
-package com.project.midtrans2.paymentlink.service;
+package com.project.midtrans2.transaciton.service;
 
-import com.project.midtrans2.paymentlink.model.PaymentLink;
-import com.project.midtrans2.paymentlink.repository.PaymentLinkRepository;
+import com.project.midtrans2.transaciton.model.PaymentLink;
+import com.project.midtrans2.transaciton.repository.PaymentLinkRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

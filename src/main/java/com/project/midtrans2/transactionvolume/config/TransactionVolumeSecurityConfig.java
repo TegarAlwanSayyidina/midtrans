@@ -8,9 +8,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig {
-
-    @Bean
+public class TransactionVolumeSecurityConfig {
+    @Bean(name = "transactionVolumeSecurityFilter")
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
