@@ -1,10 +1,13 @@
 package com.project.midtrans2.transactionlist.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class GeneralInfo {
-    private LocalDateTime dateTime;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate dateTime;
     private String orderId;
     private String transactionId;
     private String transactionStatus;
@@ -13,6 +16,7 @@ public class GeneralInfo {
     private String transactionType;
     private BigDecimal amount;
 
+    // Getters dan Setters
     public BigDecimal getAmount() {
         return amount;
     }
@@ -29,11 +33,11 @@ public class GeneralInfo {
         this.channel = channel;
     }
 
-    public LocalDateTime getDateTime() {
+    public LocalDate getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalDateTime dateTime) {
+    public void setDateTime(LocalDate dateTime) {
         this.dateTime = dateTime;
     }
 

@@ -1,10 +1,10 @@
 package com.project.midtrans2.transactionlist.model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class DisbursementDetails {
     private String transferMethod;
-    private LocalDateTime disbursementTime;
+    private LocalDate disbursementTime;
     private String receiverName;
     private String requestedBy;
     private String approvedBy;
@@ -29,11 +29,11 @@ public class DisbursementDetails {
         this.causeOfFailure = causeOfFailure;
     }
 
-    public LocalDateTime getDisbursementTime() {
+    public LocalDate getDisbursementTime() {
         return disbursementTime;
     }
 
-    public void setDisbursementTime(LocalDateTime disbursementTime) {
+    public void setDisbursementTime(LocalDate disbursementTime) {
         this.disbursementTime = disbursementTime;
     }
 
@@ -69,4 +69,3 @@ public class DisbursementDetails {
         this.transferMethod = transferMethod;
     }
 }
-
