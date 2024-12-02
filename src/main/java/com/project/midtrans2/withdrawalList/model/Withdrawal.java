@@ -1,70 +1,39 @@
 package com.project.midtrans2.withdrawalList.model;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name = "withdrawals")
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class Withdrawal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, unique = true)
     private String orderId;
-
-    @Column(nullable = false)
     private String transactionType;
-
-    @Column(nullable = false)
     private String channel;
-
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private Status status;
-
-    @Column(nullable = false)
+    private String status;
     private BigDecimal amount;
-
-    @Column(nullable = false)
     private BigDecimal fee;
 
-    @Column(nullable = false, updatable = false)
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm")
     private LocalDateTime dateTime;
 
-    // Enum untuk status transaksi
-    public enum Status {
-        REQUEST,
-        IN_PROGRESS,
-        SUCCESS,
-        FAILED,
-        CANCELLED;
+    public Withdrawal() {}
 
-        @JsonCreator
-        public static Status fromString(String status) {
-            return Status.valueOf(status.toUpperCase());  // Mengonversi input menjadi uppercase untuk mencocokkan enum
-        }
+    public Withdrawal(String orderId, String transactionType, String channel, String status, BigDecimal amount, BigDecimal fee, LocalDateTime dateTime) {
+        this.orderId = orderId;
+        this.transactionType = transactionType;
+        this.channel = channel;
+        this.status = status;
+        this.amount = amount;
+        this.fee = fee;
+        this.dateTime = dateTime;
     }
 
-    // Method untuk set dateTime otomatis tanpa detik dan nanodetik
-    @PrePersist
-    protected void onCreate() {
-        LocalDateTime now = LocalDateTime.now();
-        this.dateTime = now.withSecond(0).withNano(0); // Menghilangkan detik dan nanodetik
-    }
-
+    // Getters and Setters
     public BigDecimal getAmount() {
         return amount;
     }
@@ -113,11 +82,11 @@ public class Withdrawal {
         this.orderId = orderId;
     }
 
-    public Status getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -128,4 +97,13 @@ public class Withdrawal {
     public void setTransactionType(String transactionType) {
         this.transactionType = transactionType;
     }
+
+    public String getFormattedDateTime() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy, HH:mm");
+        return dateTime.format(formatter);
+    }
+
+    // Other getters and setters
+
 }
+

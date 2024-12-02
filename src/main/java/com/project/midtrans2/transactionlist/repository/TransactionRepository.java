@@ -14,4 +14,3 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findByDateTimeBetween(LocalDateTime startDate, LocalDateTime endDate);
     List<Transaction> findByDateTime(LocalDateTime dateTime);
 }
-
