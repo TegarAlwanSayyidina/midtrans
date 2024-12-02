@@ -5,7 +5,7 @@ import com.project.midtrans2.transactionvolume.service.GopayPaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -38,34 +38,31 @@ public class GopayPaymentController {
     // Endpoint untuk filter berdasarkan "Hari Ini"
     @GetMapping("/today")
     public List<GopayPayment> getPaymentsToday() {
-        return service.getPaymentsForPeriod(
-                LocalDateTime.now().toLocalDate().atStartOfDay(),
-                LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay()
-        );
+        LocalDate today = LocalDate.now();
+        return service.getPaymentsForPeriod(today, today.plusDays(1));
     }
 
     // Endpoint untuk filter berdasarkan "7 Hari Terakhir"
     @GetMapping("/last-7-days")
     public List<GopayPayment> getPaymentsLast7Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(7).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(7);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return service.getPaymentsForPeriod(startDate, endDate);
     }
 
     // Endpoint untuk filter berdasarkan "30 Hari Terakhir"
     @GetMapping("/last-30-days")
     public List<GopayPayment> getPaymentsLast30Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(30).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(30);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return service.getPaymentsForPeriod(startDate, endDate);
     }
 
     // Endpoint untuk filter berdasarkan "Bulan Ini"
     @GetMapping("/this-month")
     public List<GopayPayment> getPaymentsThisMonth() {
-        LocalDateTime startDate = LocalDateTime.now().withDayOfMonth(1).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusMonths(1).withDayOfMonth(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().withDayOfMonth(1);
+        LocalDate endDate = LocalDate.now().plusMonths(1).withDayOfMonth(1);
         return service.getPaymentsForPeriod(startDate, endDate);
     }
 }
-

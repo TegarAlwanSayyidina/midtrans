@@ -5,7 +5,7 @@ import com.project.midtrans2.transactionvolume.repository.BankTransferRepository
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -35,35 +35,34 @@ public class BankTransferService {
     }
 
     // Mendapatkan transaksi berdasarkan periode
-    public List<BankTransfer> getTransfersForPeriod(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<BankTransfer> getTransfersForPeriod(LocalDate startDate, LocalDate endDate) {
         return repository.findByTransactionDateBetween(startDate, endDate);
     }
 
     // Mendapatkan transaksi hari ini
     public List<BankTransfer> getTransfersForToday() {
-        LocalDateTime startOfDay = LocalDateTime.now().toLocalDate().atStartOfDay();
-        LocalDateTime endOfDay = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
-        return getTransfersForPeriod(startOfDay, endOfDay);
+        LocalDate today = LocalDate.now();
+        return getTransfersForPeriod(today, today.plusDays(1));
     }
 
     // Mendapatkan transaksi 7 hari terakhir
     public List<BankTransfer> getTransfersForLast7Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(7).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(7);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return getTransfersForPeriod(startDate, endDate);
     }
 
     // Mendapatkan transaksi 30 hari terakhir
     public List<BankTransfer> getTransfersForLast30Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(30).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(30);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return getTransfersForPeriod(startDate, endDate);
     }
 
     // Mendapatkan transaksi bulan ini
     public List<BankTransfer> getTransfersForThisMonth() {
-        LocalDateTime startDate = LocalDateTime.now().withDayOfMonth(1).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusMonths(1).withDayOfMonth(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().withDayOfMonth(1);
+        LocalDate endDate = LocalDate.now().plusMonths(1).withDayOfMonth(1);
         return getTransfersForPeriod(startDate, endDate);
     }
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.temporal.TemporalAdjusters;
 import java.util.List;
 
@@ -32,36 +31,36 @@ public class GopayPaymentService {
         repository.deleteById(id);
     }
 
-    public List<GopayPayment> getPaymentsForPeriod(LocalDateTime startDate, LocalDateTime endDate) {
+    // Mendapatkan pembayaran berdasarkan periode
+    public List<GopayPayment> getPaymentsForPeriod(LocalDate startDate, LocalDate endDate) {
         return repository.findByTransactionDateBetween(startDate, endDate);
     }
 
-    // Logika untuk mendapatkan pembayaran "Hari Ini"
+    // Mendapatkan pembayaran untuk "Hari Ini"
     public List<GopayPayment> getPaymentsToday() {
-        LocalDateTime startOfDay = LocalDate.now().atStartOfDay();
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate startOfDay = LocalDate.now();
+        LocalDate now = LocalDate.now();
         return repository.findByTransactionDateBetween(startOfDay, now);
     }
 
-    // Logika untuk mendapatkan pembayaran "7 Hari Terakhir"
+    // Mendapatkan pembayaran untuk "7 Hari Terakhir"
     public List<GopayPayment> getPaymentsLast7Days() {
-        LocalDateTime sevenDaysAgo = LocalDateTime.now().minusDays(7);
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate sevenDaysAgo = LocalDate.now().minusDays(7);
+        LocalDate now = LocalDate.now();
         return repository.findByTransactionDateBetween(sevenDaysAgo, now);
     }
 
-    // Logika untuk mendapatkan pembayaran "30 Hari Terakhir"
+    // Mendapatkan pembayaran untuk "30 Hari Terakhir"
     public List<GopayPayment> getPaymentsLast30Days() {
-        LocalDateTime thirtyDaysAgo = LocalDateTime.now().minusDays(30);
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate thirtyDaysAgo = LocalDate.now().minusDays(30);
+        LocalDate now = LocalDate.now();
         return repository.findByTransactionDateBetween(thirtyDaysAgo, now);
     }
 
-    // Logika untuk mendapatkan pembayaran "Bulan Ini"
+    // Mendapatkan pembayaran untuk "Bulan Ini"
     public List<GopayPayment> getPaymentsThisMonth() {
-        LocalDateTime startOfMonth = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth()).atStartOfDay();
-        LocalDateTime now = LocalDateTime.now();
+        LocalDate startOfMonth = LocalDate.now().with(TemporalAdjusters.firstDayOfMonth());
+        LocalDate now = LocalDate.now();
         return repository.findByTransactionDateBetween(startOfMonth, now);
     }
 }
-

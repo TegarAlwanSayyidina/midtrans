@@ -5,7 +5,7 @@ import com.project.midtrans2.transactionvolume.repository.QrisPaymentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -30,32 +30,31 @@ public class QrisPaymentService {
         repository.deleteById(id);
     }
 
-    public List<QrisPayment> getPaymentsForPeriod(LocalDateTime startDate, LocalDateTime endDate) {
+    public List<QrisPayment> getPaymentsForPeriod(LocalDate startDate, LocalDate endDate) {
         return repository.findByTransactionDateBetween(startDate, endDate);
     }
 
     public List<QrisPayment> getPaymentsForToday() {
-        LocalDateTime startDate = LocalDateTime.now().toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now();
+        LocalDate endDate = startDate.plusDays(1);
         return getPaymentsForPeriod(startDate, endDate);
     }
 
     public List<QrisPayment> getPaymentsForLast7Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(7).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(7);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return getPaymentsForPeriod(startDate, endDate);
     }
 
     public List<QrisPayment> getPaymentsForLast30Days() {
-        LocalDateTime startDate = LocalDateTime.now().minusDays(30).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().plusDays(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusDays(30);
+        LocalDate endDate = LocalDate.now().plusDays(1);
         return getPaymentsForPeriod(startDate, endDate);
     }
 
     public List<QrisPayment> getPaymentsForLastMonth() {
-        LocalDateTime startDate = LocalDateTime.now().minusMonths(1).withDayOfMonth(1).toLocalDate().atStartOfDay();
-        LocalDateTime endDate = LocalDateTime.now().withDayOfMonth(1).toLocalDate().atStartOfDay();
+        LocalDate startDate = LocalDate.now().minusMonths(1).withDayOfMonth(1);
+        LocalDate endDate = LocalDate.now().withDayOfMonth(1);
         return getPaymentsForPeriod(startDate, endDate);
     }
 }
-

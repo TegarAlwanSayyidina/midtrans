@@ -1,7 +1,7 @@
 package com.project.midtrans2.transactionvolume.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "gopay_payments")
@@ -16,7 +16,7 @@ public class GopayPayment {
     private String status;
 
     @Column(name = "transaction_date")
-    private LocalDateTime transactionDate;
+    private LocalDate transactionDate;  // Changed to LocalDate for date only
 
     @Column(name = "transaction_id")
     private String transactionId;
@@ -53,11 +53,11 @@ public class GopayPayment {
         this.status = status;
     }
 
-    public LocalDateTime getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(LocalDateTime transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 

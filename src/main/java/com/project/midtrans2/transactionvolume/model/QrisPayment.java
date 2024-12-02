@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 public class QrisPayment {
@@ -16,7 +16,7 @@ public class QrisPayment {
     private Double amount;
     private String paymentMethod;
     private String status;
-    private LocalDateTime transactionDate;
+    private LocalDate transactionDate;  // Changed to LocalDate for date only
     private String transactionId;
 
     public Double getAmount() {
@@ -51,11 +51,11 @@ public class QrisPayment {
         this.status = status;
     }
 
-    public LocalDateTime getTransactionDate() {
+    public LocalDate getTransactionDate() {
         return transactionDate;
     }
 
-    public void setTransactionDate(LocalDateTime transactionDate) {
+    public void setTransactionDate(LocalDate transactionDate) {
         this.transactionDate = transactionDate;
     }
 
@@ -67,5 +67,3 @@ public class QrisPayment {
         this.transactionId = transactionId;
     }
 }
-
-

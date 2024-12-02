@@ -5,17 +5,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 public interface BankTransferRepository extends JpaRepository<BankTransfer, Long> {
 
     // Query untuk mendapatkan transaksi setelah tanggal tertentu (Today, Last 7 Days, Last 30 Days)
     @Query("SELECT b FROM BankTransfer b WHERE b.transactionDate >= :startDate")
-    List<BankTransfer> findByTransactionDateAfter(@Param("startDate") LocalDateTime startDate);
+    List<BankTransfer> findByTransactionDateAfter(@Param("startDate") LocalDate startDate);
 
     // Query untuk mendapatkan transaksi di antara dua tanggal (This Month atau rentang waktu tertentu)
     @Query("SELECT b FROM BankTransfer b WHERE b.transactionDate >= :startDate AND b.transactionDate < :endDate")
-    List<BankTransfer> findByTransactionDateBetween(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
+    List<BankTransfer> findByTransactionDateBetween(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 }
-
