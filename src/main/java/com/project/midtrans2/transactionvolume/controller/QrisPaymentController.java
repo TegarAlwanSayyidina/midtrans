@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/qris-payments")
 public class QrisPaymentController {
@@ -60,10 +61,10 @@ public class QrisPaymentController {
     }
 
     // Endpoint untuk filter berdasarkan "Bulan Lalu"
-    @GetMapping("/last-month")
-    public List<QrisPayment> getPaymentsForLastMonth() {
-        LocalDate startDate = LocalDate.now().minusMonths(1).withDayOfMonth(1);
-        LocalDate endDate = LocalDate.now().withDayOfMonth(1);
+    @GetMapping("/this-month")
+    public List<QrisPayment> getPaymentsForThisMonth() {
+        LocalDate startDate = LocalDate.now().withDayOfMonth(1); // Hari pertama bulan ini
+        LocalDate endDate = LocalDate.now().plusMonths(1).withDayOfMonth(1); // Hari pertama bulan berikutnya
         return service.getPaymentsForPeriod(startDate, endDate);
     }
 }
