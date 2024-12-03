@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
 @CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/profiles")
@@ -37,10 +36,11 @@ public class ProfileController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<Profile> updateProfile(@PathVariable Long id, @RequestBody Profile updatedProfile) {
-        Profile updated = profileService.updateProfile(id, updatedProfile);
-        return ResponseEntity.ok(updated);
+    // Update hanya password untuk profile dengan ID 1
+    @PutMapping("/{id}/password")
+    public ResponseEntity<Profile> updateProfilePassword(@PathVariable Long id, @RequestBody String newPassword) {
+        Profile updatedProfile = profileService.updateProfile(id, new Profile(null, null, null, null, newPassword));
+        return ResponseEntity.ok(updatedProfile);
     }
 
     @DeleteMapping("/{id}")
