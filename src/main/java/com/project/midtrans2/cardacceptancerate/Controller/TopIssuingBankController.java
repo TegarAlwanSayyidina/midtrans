@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api/top-issuing-bank")
 public class TopIssuingBankController {
