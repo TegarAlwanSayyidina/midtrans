@@ -1,5 +1,6 @@
 package com.project.midtrans2.summary.totaltransaction.service;
 
+import com.project.midtrans2.summary.totaltransaction.model.TotalTransactionResponse;
 import com.project.midtrans2.summary.totaltransaction.model.TotalTransaction;
 import com.project.midtrans2.summary.totaltransaction.repository.TotalTransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +18,12 @@ public class TotalTransactionService {
         return totalTransactionRepository.save(totalTransaction);
     }
 
-    public Long getTotalTransactionMonthToDate() {
-        return totalTransactionRepository.findAll().stream()
+    public TotalTransactionResponse getTotalTransactionMonthToDate() {
+        Long totalTransactions = totalTransactionRepository.findAll().stream()
                 .filter(t -> t.getTransactionDate().getMonth().equals(LocalDate.now().getMonth()))
                 .count();
+
+        String description = "Jumlah total transaksi bulan ini adalah " + totalTransactions;
+        return new TotalTransactionResponse(totalTransactions, description);
     }
 }

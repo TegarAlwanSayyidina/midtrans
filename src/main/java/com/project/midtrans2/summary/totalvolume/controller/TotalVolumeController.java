@@ -1,6 +1,7 @@
 package com.project.midtrans2.summary.totalvolume.controller;
 
 import com.project.midtrans2.summary.totalvolume.model.TotalVolume;
+import com.project.midtrans2.summary.totalvolume.model.TotalVolumeResponse;
 import com.project.midtrans2.summary.totalvolume.service.TotalVolumeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +24,8 @@ public class TotalVolumeController {
     }
 
     @GetMapping("/month-to-date")
-    public ResponseEntity<BigDecimal> getTotalVolumeMonthToDate() {
+    public ResponseEntity<TotalVolumeResponse> getTotalVolumeMonthToDate() {
         BigDecimal totalVolume = totalVolumeService.getTotalVolumeMonthToDate();
-        return ResponseEntity.ok(totalVolume);
+        return ResponseEntity.ok(new TotalVolumeResponse(totalVolume));
     }
 }

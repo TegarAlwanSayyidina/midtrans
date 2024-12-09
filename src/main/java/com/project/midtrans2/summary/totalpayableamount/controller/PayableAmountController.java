@@ -7,6 +7,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/payable-amount")
@@ -23,8 +25,10 @@ public class PayableAmountController {
     }
 
     @GetMapping("/month-to-date")
-    public ResponseEntity<BigDecimal> getPayableAmountMonthToDate() {
-        BigDecimal payableAmount = payableAmountService.getPayableAmountMonthToDate();
-        return ResponseEntity.ok(payableAmount);
+    public ResponseEntity<Map<String, BigDecimal>> getPayableAmountMonthToDate() {
+        BigDecimal payableAmount = payableAmountService.getTotalPayableAmountMonthToDate();
+        Map<String, BigDecimal> response = new HashMap<>();
+        response.put("amount", payableAmount);
+        return ResponseEntity.ok(response);
     }
 }

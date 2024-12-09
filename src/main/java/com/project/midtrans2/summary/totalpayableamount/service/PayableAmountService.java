@@ -19,7 +19,7 @@ public class PayableAmountService {
         return payableAmountRepository.save(payableAmount);
     }
 
-    public BigDecimal getPayableAmountMonthToDate() {
+    public BigDecimal getTotalPayableAmountMonthToDate() {
         List<PayableAmount> amounts = payableAmountRepository.findAll();
         return amounts.stream()
                 .filter(a -> a.getTransactionDate().getMonth().equals(LocalDate.now().getMonth()))
