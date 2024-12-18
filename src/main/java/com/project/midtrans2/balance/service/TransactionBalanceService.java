@@ -15,11 +15,11 @@ import java.util.Optional;
 @Service
 public class TransactionBalanceService {
 
-    private final TransactionBalanceRepository transactionRepository;
+    private final TransactionBalanceRepository transactionBalanceRepository;
     private static final Logger logger = LoggerFactory.getLogger(TransactionBalanceService.class);
 
-    public TransactionBalanceService(TransactionBalanceRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
+    public TransactionBalanceService(TransactionBalanceRepository transactionBalanceRepository) {
+        this.transactionBalanceRepository = transactionBalanceRepository;
     }
 
     public List<TransactionBalance> filterTransactions(TransactionFilterRequest filterRequest, LocalDate startDate, LocalDate endDate) {
@@ -29,7 +29,7 @@ public class TransactionBalanceService {
             throw new IllegalArgumentException("startDate and endDate cannot be null");
         }
 
-        List<TransactionBalance> transactions = transactionRepository.filterTransactions(
+        List<TransactionBalance> transactions = transactionBalanceRepository.filterTransactions(
                 filterRequest.getPaymentType(),
                 filterRequest.getStatus(),
                 filterRequest.getPaymentChannel(),
@@ -40,25 +40,20 @@ public class TransactionBalanceService {
         return transactions;
     }
 
-    private String getTransactionStatusFromGateway(String orderId) {
-        logger.info("Fetching transaction status from payment gateway for orderId: {}", orderId);
-        return "Success"; // Placeholder, customize as needed
-    }
-
     public String handleTransactionStatus(String orderId) {
         logger.info("Updating transaction status for orderId: {}", orderId);
-        String status = getTransactionStatusFromGateway(orderId);
 
         if (orderId == null || orderId.trim().isEmpty()) {
             logger.warn("Received invalid orderId: {}", orderId);
             return "Invalid orderId provided";
         }
 
-        Optional<TransactionBalance> transactionOptional = transactionRepository.findByOrderId(orderId);
+        Optional<TransactionBalance> transactionOptional = transactionBalanceRepository.findByOrderId(orderId);
         if (transactionOptional.isPresent()) {
             TransactionBalance transaction = transactionOptional.get();
+            String status = getTransactionStatusFromGateway(orderId);
             transaction.setStatus(status);
-            transactionRepository.save(transaction);
+            transactionBalanceRepository.save(transaction);
             logger.info("Transaction status updated to: {}", status);
             return "Transaction status updated to: " + status;
         } else {
@@ -83,10 +78,11 @@ public class TransactionBalanceService {
             return "Invalid notification payload";
         }
 
-        Optional<TransactionBalance> transaction = transactionRepository.findByOrderId(orderId);
+        Optional<TransactionBalance> transaction = transactionBalanceRepository.findByOrderId(orderId);
         if (transaction.isPresent()) {
-            transaction.get().setStatus(status);
-            transactionRepository.save(transaction.get());
+            TransactionBalance existingTransaction = transaction.get();
+            existingTransaction.setStatus(status);
+            transactionBalanceRepository.save(existingTransaction);
             return "Transaction status updated to: " + status;
         }
 
@@ -99,11 +95,11 @@ public class TransactionBalanceService {
     }
 
     public List<TransactionBalance> getAllTransactions() {
-        return transactionRepository.findAll();
+        return transactionBalanceRepository.findAll();
     }
 
     public Optional<TransactionBalance> getTransactionByOrderId(String orderId) {
-        return transactionRepository.findByOrderId(orderId);
+        return transactionBalanceRepository.findByOrderId(orderId);
     }
 
     public String refundTransaction(String orderId, double amount) {
@@ -112,9 +108,9 @@ public class TransactionBalanceService {
             return "Invalid orderId provided";
         }
 
-        Optional<TransactionBalance> transaction = transactionRepository.findByOrderId(orderId);
+        Optional<TransactionBalance> transaction = transactionBalanceRepository.findByOrderId(orderId);
         if (transaction.isPresent()) {
-            // Implement actual refund logic here
+            // Refund logic (e.g., reverse the transaction)
             logger.info("Refund successful for orderId: {}", orderId);
             return "Refund successful for orderId: " + orderId;
         } else {
@@ -124,6 +120,42 @@ public class TransactionBalanceService {
     }
 
     public TransactionBalance saveTransaction(TransactionBalance transaction) {
-        return transactionRepository.save(transaction);
+        TransactionBalance savedTransaction = transactionBalanceRepository.save(transaction);
+
+        // Update withdrawable balance if the transaction is a successful withdrawal
+        if ("Withdrawal".equalsIgnoreCase(transaction.getPaymentType()) &&
+                "Success".equalsIgnoreCase(transaction.getStatus())) {
+            updateWithdrawableBalance(transaction.getOrderId(), transaction.getGrossAmount());
+        }
+
+        return savedTransaction;
+    }
+
+    private void updateWithdrawableBalance(String orderId, double amount) {
+        Optional<TransactionBalance> optionalBalance = transactionBalanceRepository.findByOrderId(orderId);
+
+        if (optionalBalance.isPresent()) {
+            TransactionBalance balance = optionalBalance.get();
+            double newBalance = balance.getGrossAmount() + amount;  // Add the gross amount to the balance
+            balance.setGrossAmount((int) newBalance);  // Set the new balance
+            transactionBalanceRepository.save(balance);
+
+            logger.info("Updated withdrawable balance for orderId {}: New Balance: {}", orderId, newBalance);
+        } else {
+            logger.warn("Transaction not found for updating balance, orderId: {}", orderId);
+        }
+    }
+
+    private String getTransactionStatusFromGateway(String orderId) {
+        logger.info("Fetching transaction status from payment gateway for orderId: {}", orderId);
+        return "Success"; // Placeholder, customize as needed
+    }
+
+    public Double getWithdrawableBalance() {
+        return transactionBalanceRepository.calculateWithdrawableBalance();
+    }
+
+    public Double getWithdrawableBalanceWithinDates(LocalDate startDate, LocalDate endDate) {
+        return transactionBalanceRepository.calculateWithdrawableBalanceWithinDates(startDate, endDate);
     }
 }

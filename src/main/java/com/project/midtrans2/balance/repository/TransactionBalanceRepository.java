@@ -4,25 +4,33 @@ import com.project.midtrans2.balance.model.TransactionBalance;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
-public interface TransactionBalanceRepository extends JpaRepository<TransactionBalance, String> {
+public interface TransactionBalanceRepository extends JpaRepository<TransactionBalance, Long> {
 
     Optional<TransactionBalance> findByOrderId(String orderId);
 
-    List<TransactionBalance> findAllByStatus(String status);
+    // Query untuk menghitung total saldo yang dapat ditarik
+    @Query("SELECT SUM(t.grossAmount - t.fee) FROM TransactionBalance t WHERE "
+            + "t.status = 'Settlement'")
+    Double calculateWithdrawableBalance();
 
-    // Menyesuaikan query untuk menggunakan LocalDate (tanpa waktu)
+    // Query untuk menghitung total saldo yang dapat ditarik berdasarkan rentang tanggal
+    @Query("SELECT SUM(t.grossAmount - t.fee) FROM TransactionBalance t WHERE "
+            + "t.status = 'Settlement' AND "
+            + "t.createdDate BETWEEN :startDate AND :endDate")
+    Double calculateWithdrawableBalanceWithinDates(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate
+    );
+
+    // Menyaring transaksi berdasarkan rentang tanggal
     List<TransactionBalance> findAllByCreatedDateBetween(LocalDate startDate, LocalDate endDate);
 
-    List<TransactionBalance> findAllByPaymentChannel(String paymentChannel);
-
-    // Metode untuk filter berdasarkan TransactionFilterRequest
+    // Filter transaksi berdasarkan parameter yang diberikan
     @Query("SELECT t FROM TransactionBalance t WHERE "
             + "(:paymentType IS NULL OR t.paymentType = :paymentType) AND "
             + "(:statuses IS NULL OR t.status IN :statuses) AND "

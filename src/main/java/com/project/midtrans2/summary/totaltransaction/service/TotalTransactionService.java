@@ -23,7 +23,7 @@ public class TotalTransactionService {
                 .filter(t -> t.getTransactionDate().getMonth().equals(LocalDate.now().getMonth()))
                 .count();
 
-        String description = "Jumlah total transaksi bulan ini adalah " + totalTransactions;
+        String description = "Jumlah transaksi bulan ini = " + totalTransactions;
         return new TotalTransactionResponse(totalTransactions, description);
     }
 }

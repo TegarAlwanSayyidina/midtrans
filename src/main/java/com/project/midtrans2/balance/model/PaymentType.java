@@ -67,4 +67,6 @@ public class PaymentType {
     public void setChannel(String channel) {
         this.channel = channel;
     }
+
+
 }

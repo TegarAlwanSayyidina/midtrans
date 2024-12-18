@@ -1,0 +1,412 @@
+2024-12-16T14:32:00.864+07:00  INFO 15140 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 15140 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T14:32:00.868+07:00  INFO 15140 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T14:32:00.945+07:00  INFO 15140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T14:32:00.946+07:00  INFO 15140 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T14:32:02.344+07:00  INFO 15140 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T14:32:02.584+07:00  INFO 15140 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 228 ms. Found 22 JPA repository interfaces.
+2024-12-16T14:32:03.532+07:00  INFO 15140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T14:32:03.552+07:00  INFO 15140 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T14:32:03.552+07:00  INFO 15140 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T14:32:03.619+07:00  INFO 15140 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T14:32:03.619+07:00  INFO 15140 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2672 ms
+2024-12-16T14:32:03.921+07:00  INFO 15140 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T14:32:04.024+07:00  INFO 15140 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T14:32:04.071+07:00  INFO 15140 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T14:32:04.514+07:00  INFO 15140 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T14:32:04.558+07:00  INFO 15140 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T14:32:04.798+07:00  INFO 15140 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@63a874ec
+2024-12-16T14:32:04.800+07:00  INFO 15140 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T14:32:04.837+07:00  WARN 15140 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T14:32:06.307+07:00  INFO 15140 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T14:32:06.430+07:00  INFO 15140 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T14:32:06.873+07:00  INFO 15140 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T14:32:08.264+07:00  WARN 15140 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T14:32:08.308+07:00  INFO 15140 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T14:32:08.604+07:00 DEBUG 15140 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 110 mappings in 'requestMappingHandlerMapping'
+2024-12-16T14:32:08.765+07:00 DEBUG 15140 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T14:32:08.842+07:00  INFO 15140 --- [restartedMain] c.p.m.r.c.RegistrationWebSecurityConfig  : Security filter chain for registration configured successfully.
+2024-12-16T14:32:08.976+07:00 DEBUG 15140 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T14:32:09.028+07:00 DEBUG 15140 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T14:32:09.334+07:00  INFO 15140 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T14:32:09.388+07:00  INFO 15140 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T14:32:09.404+07:00  INFO 15140 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 9.28 seconds (process running for 9.976)
+2024-12-16T14:32:24.552+07:00  INFO 15140 --- [http-nio-8383-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16T14:32:24.552+07:00  INFO 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-16T14:32:24.552+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-16T14:32:24.553+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-16T14:32:24.553+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-16T14:32:24.554+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@287dd117
+2024-12-16T14:32:24.555+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@77c69123
+2024-12-16T14:32:24.555+07:00 DEBUG 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-16T14:32:24.556+07:00  INFO 15140 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-16T14:38:59.663+07:00  INFO 15140 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T14:38:59.673+07:00  INFO 15140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T14:38:59.680+07:00  INFO 15140 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-16T14:39:02.427+07:00  INFO 11220 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 11220 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T14:39:02.430+07:00  INFO 11220 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T14:39:02.507+07:00  INFO 11220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T14:39:02.507+07:00  INFO 11220 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T14:39:03.805+07:00  INFO 11220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T14:39:04.006+07:00  INFO 11220 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 22 JPA repository interfaces.
+2024-12-16T14:39:04.922+07:00  INFO 11220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T14:39:04.947+07:00  INFO 11220 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T14:39:04.947+07:00  INFO 11220 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T14:39:05.013+07:00  INFO 11220 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T14:39:05.013+07:00  INFO 11220 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2505 ms
+2024-12-16T14:39:05.309+07:00  INFO 11220 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T14:39:05.398+07:00  INFO 11220 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T14:39:05.442+07:00  INFO 11220 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T14:39:05.831+07:00  INFO 11220 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T14:39:05.873+07:00  INFO 11220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T14:39:06.104+07:00  INFO 11220 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@77aa349
+2024-12-16T14:39:06.106+07:00  INFO 11220 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T14:39:06.144+07:00  WARN 11220 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T14:39:07.633+07:00  INFO 11220 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T14:39:07.751+07:00  INFO 11220 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T14:39:08.196+07:00  INFO 11220 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T14:39:09.409+07:00  WARN 11220 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T14:39:09.445+07:00  INFO 11220 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T14:39:09.726+07:00 DEBUG 11220 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 110 mappings in 'requestMappingHandlerMapping'
+2024-12-16T14:39:09.849+07:00 DEBUG 11220 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T14:39:09.914+07:00  INFO 11220 --- [restartedMain] c.p.m.r.c.RegistrationWebSecurityConfig  : Security filter chain for registration configured successfully.
+2024-12-16T14:39:10.052+07:00 DEBUG 11220 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T14:39:10.101+07:00 DEBUG 11220 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T14:39:10.354+07:00  INFO 11220 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T14:39:10.399+07:00  INFO 11220 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T14:39:10.414+07:00  INFO 11220 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 8.749 seconds (process running for 9.57)
+2024-12-16T14:39:22.810+07:00  INFO 11220 --- [http-nio-8383-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16T14:39:22.810+07:00  INFO 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-16T14:39:22.810+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-16T14:39:22.810+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-16T14:39:22.810+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-16T14:39:22.812+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@11cdb267
+2024-12-16T14:39:22.812+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@7ba02773
+2024-12-16T14:39:22.813+07:00 DEBUG 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-16T14:39:22.813+07:00  INFO 11220 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-12-16T14:54:38.375+07:00  INFO 11220 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T14:54:38.384+07:00  INFO 11220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T14:54:38.394+07:00  INFO 11220 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-16T14:54:43.323+07:00  INFO 8076 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 8076 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T14:54:43.325+07:00  INFO 8076 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T14:54:43.406+07:00  INFO 8076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T14:54:43.406+07:00  INFO 8076 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T14:54:44.345+07:00  WARN 8076 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'securityFilterChain' defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=registrationWebSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]] for bean 'securityFilterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loginSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class]] bound.
+2024-12-16T14:54:44.357+07:00  INFO 8076 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16T14:54:44.382+07:00 ERROR 8076 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'securityFilterChain', defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-16T14:57:41.451+07:00  INFO 4664 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 4664 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T14:57:41.453+07:00  INFO 4664 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T14:57:41.525+07:00  INFO 4664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T14:57:41.526+07:00  INFO 4664 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T14:57:42.473+07:00  WARN 4664 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'securityFilterChain' defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=registrationWebSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]] for bean 'securityFilterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loginSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class]] bound.
+2024-12-16T14:57:42.485+07:00  INFO 4664 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16T14:57:42.515+07:00 ERROR 4664 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'securityFilterChain', defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-16T14:59:49.628+07:00  INFO 11984 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 11984 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T14:59:49.631+07:00  INFO 11984 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T14:59:49.707+07:00  INFO 11984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T14:59:49.707+07:00  INFO 11984 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T14:59:50.634+07:00  WARN 11984 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'securityFilterChain' defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=registrationWebSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]] for bean 'securityFilterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loginSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class]] bound.
+2024-12-16T14:59:50.643+07:00  INFO 11984 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16T14:59:50.670+07:00 ERROR 11984 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'securityFilterChain', defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-16T15:00:02.567+07:00  INFO 6632 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 6632 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T15:00:02.570+07:00  INFO 6632 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : No active profile set, falling back to 1 default profile: "default"
+2024-12-16T15:00:02.635+07:00  INFO 6632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T15:00:02.636+07:00  INFO 6632 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T15:00:03.520+07:00  WARN 6632 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'securityFilterChain' defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=registrationWebSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]] for bean 'securityFilterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loginSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class]] bound.
+2024-12-16T15:00:03.532+07:00  INFO 6632 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16T15:00:03.561+07:00 ERROR 6632 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'securityFilterChain', defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-16T15:02:02.769+07:00  INFO 3812 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 3812 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T15:02:02.771+07:00  INFO 3812 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : The following 1 profile is active: "registration"
+2024-12-16T15:02:02.839+07:00  INFO 3812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T15:02:02.839+07:00  INFO 3812 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T15:02:03.818+07:00  WARN 3812 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.support.BeanDefinitionOverrideException: Invalid bean definition with name 'securityFilterChain' defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]: Cannot register bean definition [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=registrationWebSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class]] for bean 'securityFilterChain' since there is already [Root bean: class [null]; scope=; abstract=false; lazyInit=null; autowireMode=3; dependencyCheck=0; autowireCandidate=true; primary=false; factoryBeanName=loginSecurityConfig; factoryMethodName=securityFilterChain; initMethodNames=null; destroyMethodNames=[(inferred)]; defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class]] bound.
+2024-12-16T15:02:03.829+07:00  INFO 3812 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-12-16T15:02:03.853+07:00 ERROR 3812 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The bean 'securityFilterChain', defined in class path resource [com/project/midtrans2/registration/config/RegistrationWebSecurityConfig.class], could not be registered. A bean with that name has already been defined in class path resource [com/project/midtrans2/login/config/LoginSecurityConfig.class] and overriding is disabled.
+
+Action:
+
+Consider renaming one of the beans or enabling overriding by setting spring.main.allow-bean-definition-overriding=true
+
+2024-12-16T15:03:23.228+07:00  INFO 708 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 708 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T15:03:23.232+07:00  INFO 708 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : The following 1 profile is active: "registration"
+2024-12-16T15:03:23.308+07:00  INFO 708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T15:03:23.308+07:00  INFO 708 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T15:03:24.627+07:00  INFO 708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T15:03:24.836+07:00  INFO 708 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 196 ms. Found 22 JPA repository interfaces.
+2024-12-16T15:03:25.756+07:00  INFO 708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T15:03:25.778+07:00  INFO 708 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T15:03:25.779+07:00  INFO 708 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T15:03:25.847+07:00  INFO 708 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T15:03:25.847+07:00  INFO 708 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2538 ms
+2024-12-16T15:03:26.143+07:00  INFO 708 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T15:03:26.237+07:00  INFO 708 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T15:03:26.300+07:00  INFO 708 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T15:03:26.714+07:00  INFO 708 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T15:03:26.756+07:00  INFO 708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T15:03:26.987+07:00  INFO 708 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@306d926f
+2024-12-16T15:03:26.989+07:00  INFO 708 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T15:03:27.022+07:00  WARN 708 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T15:03:28.508+07:00  INFO 708 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T15:03:28.627+07:00  INFO 708 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T15:03:29.075+07:00  INFO 708 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T15:03:30.374+07:00  WARN 708 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T15:03:30.409+07:00  INFO 708 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T15:03:30.699+07:00 DEBUG 708 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 110 mappings in 'requestMappingHandlerMapping'
+2024-12-16T15:03:30.837+07:00 DEBUG 708 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T15:03:31.037+07:00 DEBUG 708 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T15:03:31.092+07:00 DEBUG 708 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T15:03:31.336+07:00  INFO 708 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T15:03:31.377+07:00  INFO 708 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T15:03:31.392+07:00  INFO 708 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 8.862 seconds (process running for 9.56)
+2024-12-16T15:04:31.482+07:00  INFO 708 --- [http-nio-8383-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16T15:04:31.482+07:00  INFO 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-16T15:04:31.483+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-16T15:04:31.483+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-16T15:04:31.483+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-16T15:04:31.484+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@7cb74b04
+2024-12-16T15:04:31.484+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@59893fc2
+2024-12-16T15:04:31.485+07:00 DEBUG 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-16T15:04:31.485+07:00  INFO 708 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-16T15:13:44.438+07:00  INFO 708 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T15:13:44.443+07:00  INFO 708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T15:13:44.447+07:00  INFO 708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-16T15:13:48.826+07:00  INFO 15196 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 15196 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T15:13:48.828+07:00  INFO 15196 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : The following 1 profile is active: "registration"
+2024-12-16T15:13:48.887+07:00  INFO 15196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T15:13:48.887+07:00  INFO 15196 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T15:13:50.145+07:00  INFO 15196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T15:13:50.352+07:00  INFO 15196 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 186 ms. Found 22 JPA repository interfaces.
+2024-12-16T15:13:51.251+07:00  INFO 15196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T15:13:51.269+07:00  INFO 15196 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T15:13:51.270+07:00  INFO 15196 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T15:13:51.348+07:00  INFO 15196 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T15:13:51.348+07:00  INFO 15196 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2461 ms
+2024-12-16T15:13:51.621+07:00  INFO 15196 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T15:13:51.712+07:00  INFO 15196 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T15:13:51.773+07:00  INFO 15196 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T15:13:52.170+07:00  INFO 15196 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T15:13:52.207+07:00  INFO 15196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T15:13:52.418+07:00  INFO 15196 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@306d926f
+2024-12-16T15:13:52.420+07:00  INFO 15196 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T15:13:52.462+07:00  WARN 15196 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T15:13:53.959+07:00  INFO 15196 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T15:13:54.077+07:00  INFO 15196 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T15:13:54.523+07:00  INFO 15196 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T15:13:55.761+07:00  WARN 15196 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T15:13:55.793+07:00  INFO 15196 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T15:13:56.063+07:00 DEBUG 15196 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 110 mappings in 'requestMappingHandlerMapping'
+2024-12-16T15:13:56.184+07:00 DEBUG 15196 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T15:13:56.383+07:00 DEBUG 15196 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T15:13:56.422+07:00 DEBUG 15196 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T15:13:56.650+07:00  INFO 15196 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T15:13:56.691+07:00  INFO 15196 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T15:13:56.704+07:00  INFO 15196 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 8.582 seconds (process running for 9.275)
+2024-12-16T15:14:08.548+07:00  INFO 15196 --- [http-nio-8383-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16T15:14:08.548+07:00  INFO 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-16T15:14:08.548+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-16T15:14:08.549+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-16T15:14:08.549+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-16T15:14:08.550+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2afd2b60
+2024-12-16T15:14:08.551+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@500d479e
+2024-12-16T15:14:08.552+07:00 DEBUG 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-16T15:14:08.552+07:00  INFO 15196 --- [http-nio-8383-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-12-16T16:30:31.040+07:00  INFO 15196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T16:30:31.075+07:00  INFO 15196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T16:30:31.084+07:00  INFO 15196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-16T16:30:39.315+07:00  INFO 12776 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 12776 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T16:30:39.318+07:00  INFO 12776 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : The following 1 profile is active: "registration"
+2024-12-16T16:30:39.396+07:00  INFO 12776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T16:30:39.396+07:00  INFO 12776 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T16:30:41.135+07:00  INFO 12776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T16:30:41.457+07:00  INFO 12776 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 305 ms. Found 22 JPA repository interfaces.
+2024-12-16T16:30:42.928+07:00  INFO 12776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T16:30:42.959+07:00  INFO 12776 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T16:30:42.960+07:00  INFO 12776 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T16:30:43.078+07:00  INFO 12776 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T16:30:43.078+07:00  INFO 12776 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3681 ms
+2024-12-16T16:30:43.519+07:00  INFO 12776 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T16:30:43.642+07:00  INFO 12776 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T16:30:43.742+07:00  INFO 12776 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T16:30:44.276+07:00  INFO 12776 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T16:30:44.325+07:00  INFO 12776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T16:30:44.625+07:00  INFO 12776 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@60003b10
+2024-12-16T16:30:44.628+07:00  INFO 12776 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T16:30:44.683+07:00  WARN 12776 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T16:30:46.742+07:00  INFO 12776 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T16:30:46.890+07:00  INFO 12776 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T16:30:47.489+07:00  INFO 12776 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T16:30:49.568+07:00  WARN 12776 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T16:30:49.644+07:00  INFO 12776 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T16:30:50.121+07:00 DEBUG 12776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 110 mappings in 'requestMappingHandlerMapping'
+2024-12-16T16:30:50.338+07:00 DEBUG 12776 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T16:30:50.658+07:00 DEBUG 12776 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T16:30:50.730+07:00 DEBUG 12776 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T16:30:51.150+07:00  INFO 12776 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T16:30:51.237+07:00  INFO 12776 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T16:30:51.271+07:00  INFO 12776 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 12.763 seconds (process running for 13.664)
+2024-12-16T16:37:47.653+07:00  INFO 12776 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T16:37:47.658+07:00  INFO 12776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T16:37:47.666+07:00  INFO 12776 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-12-16T16:38:10.844+07:00  INFO 444 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Starting Midtrans2Application using Java 22.0.2 with PID 444 (C:\Users\UsEr\IdeaProjects\midtrans2\target\classes started by Tegar Alwan in C:\Users\UsEr\IdeaProjects\midtrans2)
+2024-12-16T16:38:10.847+07:00  INFO 444 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : The following 1 profile is active: "registration"
+2024-12-16T16:38:10.918+07:00  INFO 444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-12-16T16:38:10.918+07:00  INFO 444 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-12-16T16:38:12.235+07:00  INFO 444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-16T16:38:12.451+07:00  INFO 444 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 200 ms. Found 23 JPA repository interfaces.
+2024-12-16T16:38:13.388+07:00  INFO 444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8383 (http)
+2024-12-16T16:38:13.414+07:00  INFO 444 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-16T16:38:13.414+07:00  INFO 444 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-12-16T16:38:13.478+07:00  INFO 444 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-16T16:38:13.479+07:00  INFO 444 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2561 ms
+2024-12-16T16:38:13.783+07:00  INFO 444 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-16T16:38:13.890+07:00  INFO 444 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-12-16T16:38:13.966+07:00  INFO 444 --- [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-16T16:38:14.501+07:00  INFO 444 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-16T16:38:14.555+07:00  INFO 444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-16T16:38:14.891+07:00  INFO 444 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@13c18cf3
+2024-12-16T16:38:14.893+07:00  INFO 444 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-16T16:38:14.934+07:00  WARN 444 --- [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-12-16T16:38:16.897+07:00  INFO 444 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-16T16:38:17.055+07:00  INFO 444 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T16:38:17.609+07:00  INFO 444 --- [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-12-16T16:38:19.204+07:00  WARN 444 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-16T16:38:19.246+07:00  INFO 444 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name myUserDetailsService
+2024-12-16T16:38:19.598+07:00 DEBUG 444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 115 mappings in 'requestMappingHandlerMapping'
+2024-12-16T16:38:19.744+07:00 DEBUG 444 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui*/*swagger-initializer.js, /swagger-ui*/**] in 'resourceHandlerMapping'
+2024-12-16T16:38:20.010+07:00 DEBUG 444 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-12-16T16:38:20.075+07:00 DEBUG 444 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 3 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-12-16T16:38:20.378+07:00  INFO 444 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-12-16T16:38:20.427+07:00  INFO 444 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8383 (http) with context path '/'
+2024-12-16T16:38:20.443+07:00  INFO 444 --- [restartedMain] c.p.midtrans2.Midtrans2Application       : Started Midtrans2Application in 10.212 seconds (process running for 11.497)
+2024-12-16T16:39:55.552+07:00  INFO 444 --- [http-nio-8383-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-12-16T16:39:55.553+07:00  INFO 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-12-16T16:39:55.553+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-12-16T16:39:55.553+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-12-16T16:39:55.553+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-12-16T16:39:55.554+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@41fc7f92
+2024-12-16T16:39:55.554+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@4fba7c3f
+2024-12-16T16:39:55.555+07:00 DEBUG 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-12-16T16:39:55.555+07:00  INFO 444 --- [http-nio-8383-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-12-16T16:41:20.528+07:00  INFO 444 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-12-16T16:41:20.534+07:00  INFO 444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-12-16T16:41:20.541+07:00  INFO 444 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+ Hibernate: select tib1_0.id,tib1_0.bank_name,tib1_0.date,tib1_0.transactions from top_issuing_bank tib1_0 where tib1_0.date between ? and ?
+ Hibernate: select pa1_0.id,pa1_0.amount,pa1_0.transaction_date from payable_amount pa1_0
+ Hibernate: select tv1_0.id,tv1_0.amount,tv1_0.transaction_date from total_volume tv1_0
+ Hibernate: select tt1_0.id,tt1_0.transaction_date from total_transaction tt1_0
+ Hibernate: select ptcar1_0.id,ptcar1_0.date,ptcar1_0.type from payment_type_card_acceptance_rate ptcar1_0 where ptcar1_0.date between ? and ?
+ Hibernate: select gp1_0.id,gp1_0.amount,gp1_0.payment_method,gp1_0.status,gp1_0.transaction_date,gp1_0.transaction_id from gopay_payments gp1_0 where gp1_0.transaction_date>=? and gp1_0.transaction_date<?
+ Hibernate: select bt1_0.id,bt1_0.amount,bt1_0.payment_method,bt1_0.status,bt1_0.transaction_date,bt1_0.transaction_id from bank_transfer bt1_0 where bt1_0.transaction_date>=? and bt1_0.transaction_date<?
+ Hibernate: select qp1_0.id,qp1_0.amount,qp1_0.payment_method,qp1_0.status,qp1_0.transaction_date,qp1_0.transaction_id from qris_payment qp1_0 where qp1_0.transaction_date between ? and ?
+ Hibernate: select mb1_0.id,mb1_0.amount,mb1_0.payment_method,mb1_0.status,mb1_0.transaction_date,mb1_0.transaction_id from mandiri_bill mb1_0 where mb1_0.transaction_date>=? and mb1_0.transaction_date<?
+ Hibernate: select pa1_0.id,pa1_0.amount,pa1_0.transaction_date from payable_amount pa1_0
+ Hibernate: select tib1_0.id,tib1_0.bank_name,tib1_0.date,tib1_0.transactions from top_issuing_bank tib1_0 where tib1_0.date between ? and ?
+ Hibernate: select tv1_0.id,tv1_0.amount,tv1_0.transaction_date from total_volume tv1_0
+ Hibernate: select tt1_0.id,tt1_0.transaction_date from total_transaction tt1_0
+ Hibernate: select ptcar1_0.id,ptcar1_0.date,ptcar1_0.type from payment_type_card_acceptance_rate ptcar1_0 where ptcar1_0.date between ? and ?
+ Hibernate: select gp1_0.id,gp1_0.amount,gp1_0.payment_method,gp1_0.status,gp1_0.transaction_date,gp1_0.transaction_id from gopay_payments gp1_0 where gp1_0.transaction_date>=? and gp1_0.transaction_date<?
+ Hibernate: select bt1_0.id,bt1_0.amount,bt1_0.payment_method,bt1_0.status,bt1_0.transaction_date,bt1_0.transaction_id from bank_transfer bt1_0 where bt1_0.transaction_date>=? and bt1_0.transaction_date<?
+ Hibernate: select qp1_0.id,qp1_0.amount,qp1_0.payment_method,qp1_0.status,qp1_0.transaction_date,qp1_0.transaction_id from qris_payment qp1_0 where qp1_0.transaction_date between ? and ?
+ Hibernate: select mb1_0.id,mb1_0.amount,mb1_0.payment_method,mb1_0.status,mb1_0.transaction_date,mb1_0.transaction_id from mandiri_bill mb1_0 where mb1_0.transaction_date>=? and mb1_0.transaction_date<?
+ Hibernate: select tv1_0.id,tv1_0.amount,tv1_0.transaction_date from total_volume tv1_0
+ Hibernate: select pa1_0.id,pa1_0.amount,pa1_0.transaction_date from payable_amount pa1_0
+ Hibernate: select ptcar1_0.id,ptcar1_0.date,ptcar1_0.type from payment_type_card_acceptance_rate ptcar1_0 where ptcar1_0.date between ? and ?
+ Hibernate: select tib1_0.id,tib1_0.bank_name,tib1_0.date,tib1_0.transactions from top_issuing_bank tib1_0 where tib1_0.date between ? and ?
+ Hibernate: select tt1_0.id,tt1_0.transaction_date from total_transaction tt1_0
+ Hibernate: select gp1_0.id,gp1_0.amount,gp1_0.payment_method,gp1_0.status,gp1_0.transaction_date,gp1_0.transaction_id from gopay_payments gp1_0 where gp1_0.transaction_date>=? and gp1_0.transaction_date<?
+ Hibernate: select bt1_0.id,bt1_0.amount,bt1_0.payment_method,bt1_0.status,bt1_0.transaction_date,bt1_0.transaction_id from bank_transfer bt1_0 where bt1_0.transaction_date>=? and bt1_0.transaction_date<?
+ Hibernate: select qp1_0.id,qp1_0.amount,qp1_0.payment_method,qp1_0.status,qp1_0.transaction_date,qp1_0.transaction_id from qris_payment qp1_0 where qp1_0.transaction_date between ? and ?
+ Hibernate: select mb1_0.id,mb1_0.amount,mb1_0.payment_method,mb1_0.status,mb1_0.transaction_date,mb1_0.transaction_id from mandiri_bill mb1_0 where mb1_0.transaction_date>=? and mb1_0.transaction_date<?
+ Hibernate: select tv1_0.id,tv1_0.amount,tv1_0.transaction_date from total_volume tv1_0
+ Hibernate: select tt1_0.id,tt1_0.transaction_date from total_transaction tt1_0
+ Hibernate: select pa1_0.id,pa1_0.amount,pa1_0.transaction_date from payable_amount pa1_0
+ Hibernate: select ptcar1_0.id,ptcar1_0.date,ptcar1_0.type from payment_type_card_acceptance_rate ptcar1_0 where ptcar1_0.date between ? and ?
+ Hibernate: select tib1_0.id,tib1_0.bank_name,tib1_0.date,tib1_0.transactions from top_issuing_bank tib1_0 where tib1_0.date between ? and ?
+ Hibernate: select bt1_0.id,bt1_0.amount,bt1_0.payment_method,bt1_0.status,bt1_0.transaction_date,bt1_0.transaction_id from bank_transfer bt1_0 where bt1_0.transaction_date>=? and bt1_0.transaction_date<?
+ Hibernate: select mb1_0.id,mb1_0.amount,mb1_0.payment_method,mb1_0.status,mb1_0.transaction_date,mb1_0.transaction_id from mandiri_bill mb1_0 where mb1_0.transaction_date>=? and mb1_0.transaction_date<?
+ Hibernate: select gp1_0.id,gp1_0.amount,gp1_0.payment_method,gp1_0.status,gp1_0.transaction_date,gp1_0.transaction_id from gopay_payments gp1_0 where gp1_0.transaction_date>=? and gp1_0.transaction_date<?
+ Hibernate: select qp1_0.id,qp1_0.amount,qp1_0.payment_method,qp1_0.status,qp1_0.transaction_date,qp1_0.transaction_id from qris_payment qp1_0 where qp1_0.transaction_date between ? and ?
+ Hibernate: select t1_0.id,t1_0.amount,t1_0.channel,t1_0.customer_email,t1_0.date_time,t1_0.order_id,t1_0.status,t1_0.transaction_type from transactions t1_0
+ Hibernate: select t1_0.id,t1_0.amount,t1_0.channel,t1_0.customer_email,t1_0.date_time,t1_0.order_id,t1_0.status,t1_0.transaction_type from transactions t1_0
+ Hibernate: select gp1_0.id,gp1_0.amount,gp1_0.payment_method,gp1_0.status,gp1_0.transaction_date,gp1_0.transaction_id from gopay_payments gp1_0 where gp1_0.transaction_date>=? and gp1_0.transaction_date<?
+ Hibernate: select mb1_0.id,mb1_0.amount,mb1_0.payment_method,mb1_0.status,mb1_0.transaction_date,mb1_0.transaction_id from mandiri_bill mb1_0 where mb1_0.transaction_date>=? and mb1_0.transaction_date<?
+ Hibernate: select tt1_0.id,tt1_0.transaction_date from total_transaction tt1_0
+ Hibernate: select tv1_0.id,tv1_0.amount,tv1_0.transaction_date from total_volume tv1_0
+ Hibernate: select pa1_0.id,pa1_0.amount,pa1_0.transaction_date from payable_amount pa1_0
+ Hibernate: select ptcar1_0.id,ptcar1_0.date,ptcar1_0.type from payment_type_card_acceptance_rate ptcar1_0 where ptcar1_0.date between ? and ?
+ Hibernate: select bt1_0.id,bt1_0.amount,bt1_0.payment_method,bt1_0.status,bt1_0.transaction_date,bt1_0.transaction_id from bank_transfer bt1_0 where bt1_0.transaction_date>=? and bt1_0.transaction_date<?
+ Hibernate: select tib1_0.id,tib1_0.bank_name,tib1_0.date,tib1_0.transactions from top_issuing_bank tib1_0 where tib1_0.date between ? and ?
+ Hibernate: select qp1_0.id,qp1_0.amount,qp1_0.payment_method,qp1_0.status,qp1_0.transaction_date,qp1_0.transaction_id from qris_payment qp1_0 where qp1_0.transaction_date between ? and ?
+ Hibernate: select t1_0.id,t1_0.amount,t1_0.channel,t1_0.customer_email,t1_0.date_time,t1_0.order_id,t1_0.status,t1_0.transaction_type from transactions t1_0
+ Hibernate: select tb1_0.id,tb1_0.created_date,tb1_0.fee,tb1_0.gross_amount,tb1_0.order_id,tb1_0.payment_channel,tb1_0.payment_type,tb1_0.status from transaction_balance tb1_0
+ Hibernate: select tb1_0.id,tb1_0.created_date,tb1_0.fee,tb1_0.gross_amount,tb1_0.order_id,tb1_0.payment_channel,tb1_0.payment_type,tb1_0.status from transaction_balance tb1_0
+ Hibernate: select tb1_0.id,tb1_0.created_date,tb1_0.fee,tb1_0.gross_amount,tb1_0.order_id,tb1_0.payment_channel,tb1_0.payment_type,tb1_0.status from transaction_balance tb1_0

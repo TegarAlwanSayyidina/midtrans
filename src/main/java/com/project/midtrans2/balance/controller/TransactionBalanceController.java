@@ -37,7 +37,7 @@ public class TransactionBalanceController {
             @RequestParam(required = false) Integer fee,
             @RequestParam(required = false) String paymentType,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> startDate,
-            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> endDate) {
+                @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Optional<LocalDate> endDate) {
 
         LocalDate finalStartDate = startDate.orElse(LocalDate.now().minusMonths(1));
         LocalDate finalEndDate = endDate.orElse(LocalDate.now());
@@ -175,6 +175,33 @@ public class TransactionBalanceController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
             }
         }
+    }
+
+    @GetMapping("/withdrawable-balance")
+    public ResponseEntity<Object> getWithdrawableBalance(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+
+        // Default range jika tanggal tidak diberikan
+        LocalDate finalStartDate = (startDate != null) ? startDate : LocalDate.now().minusMonths(1);
+        LocalDate finalEndDate = (endDate != null) ? endDate : LocalDate.now();
+
+        if (finalStartDate.isAfter(finalEndDate)) {
+            Map<String, String> errorResponse = new HashMap<>();
+            errorResponse.put("error", "Start date cannot be after end date.");
+            return ResponseEntity.badRequest().body(errorResponse);
+        }
+
+        logger.info("Calculating withdrawable balance from {} to {}", finalStartDate, finalEndDate);
+
+        // Panggil service untuk menghitung saldo withdrawable
+        Double balance = transactionService.getWithdrawableBalanceWithinDates(finalStartDate, finalEndDate);
+
+        // Format respons JSON dalam array
+        Map<String, Object> response = new HashMap<>();
+        response.put("withdrawableBalance", balance);
+
+        return ResponseEntity.ok(List.of(response));
     }
 
 }

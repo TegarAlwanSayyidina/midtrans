@@ -49,9 +49,11 @@ public class TransactionController {
             @RequestParam(required = false) LocalDateTime dateTime,
             @RequestParam(required = false) String quickFilter,
             @RequestParam(required = false) LocalDate startDate,
-            @RequestParam(required = false) LocalDate endDate) {
+            @RequestParam(required = false) LocalDate endDate,
+            @RequestParam(required = false) Double amount,
+            @RequestParam(required = false) String customerEmail) {
 
-        List<Transaction> transactions;
+        List<Transaction> transactions = null;
 
         // Filter berdasarkan Order ID
         if (orderId != null && !orderId.isEmpty()) {
@@ -93,6 +95,26 @@ public class TransactionController {
             return new ResponseEntity<>(transactions, HttpStatus.OK);
         }
 
+        // Filter berdasarkan Amount
+        if (amount != null) {
+            transactions = transactionService.getTransactionsByAmount(amount);
+            if (transactions.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("No transactions found for Amount: " + amount);
+            }
+            return new ResponseEntity<>(transactions, HttpStatus.OK);
+        }
+
+        // Filter berdasarkan Customer Email
+        if (customerEmail != null && !customerEmail.isEmpty()) {
+            transactions = transactionService.getTransactionsByCustomerEmail(customerEmail);
+            if (transactions.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("No transactions found for Customer Email: " + customerEmail);
+            }
+            return new ResponseEntity<>(transactions, HttpStatus.OK);
+        }
+
         // Filter berdasarkan DateTime
         if (dateTime != null) {
             transactions = transactionService.getTransactionsByDateTime(dateTime);
@@ -125,6 +147,10 @@ public class TransactionController {
                 default:
                     return ResponseEntity.badRequest().body("Invalid quick filter: " + quickFilter);
             }
+            if (transactions.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("No transactions found for Quick Filter: " + quickFilter);
+            }
             return new ResponseEntity<>(transactions, HttpStatus.OK);
         }
 
@@ -138,10 +164,15 @@ public class TransactionController {
             return new ResponseEntity<>(transactions, HttpStatus.OK);
         }
 
-        // Default: Kembalikan semua transaksi
+        // Default: Kembalikan semua transaksi jika tidak ada filter yang diberikan
         transactions = transactionService.getAllTransactions();
+        if (transactions.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("No transactions found.");
+        }
         return new ResponseEntity<>(transactions, HttpStatus.OK);
     }
+
 
     @GetMapping("/reset")
     public ResponseEntity<List<Transaction>> resetFilters() {

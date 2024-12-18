@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "transaction_balance") // Sesuaikan nama tabel dengan database
+@Table(name = "transaction_balance")
 public class TransactionBalance {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "order_id")  // Sesuaikan dengan nama kolom di database
+    @Column(name = "order_id")
     private String orderId;
 
     @Column(name = "status")
@@ -21,7 +21,7 @@ public class TransactionBalance {
     private String paymentChannel;
 
     @Column(name = "gross_amount")
-    private Integer grossAmount;  // Gunakan Integer agar sesuai dengan tipe di database
+    private Integer grossAmount;
 
     @Column(name = "fee")
     private Integer fee;
@@ -30,10 +30,9 @@ public class TransactionBalance {
     private String paymentType;
 
     @Column(name = "created_date")
-    private LocalDate createdDate;  // Ubah ke LocalDate
+    private LocalDate createdDate;
 
     // Getter dan Setter untuk semua field
-
     public Long getId() {
         return id;
     }

@@ -13,4 +13,6 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
     List<Transaction> findByTransactionTypeAndChannel(String transactionType, String channel);
     List<Transaction> findByDateTimeBetween(LocalDateTime startDate, LocalDateTime endDate);
     List<Transaction> findByDateTime(LocalDateTime dateTime);
+    List<Transaction> findByAmount(Double amount);
+    List<Transaction> findByCustomerEmail(String customerEmail);
 }

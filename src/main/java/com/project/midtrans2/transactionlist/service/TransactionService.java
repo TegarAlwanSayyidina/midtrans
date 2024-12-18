@@ -35,24 +35,7 @@ public class TransactionService {
 
     // Mendapatkan transaksi berdasarkan Order ID
     public List<Transaction> getTransactionsByOrderId(String orderId) {
-        List<Transaction> result = transactionRepository.findByOrderId(orderId);
-        if (result.isEmpty()) {
-            System.out.println("No transactions found for Order ID: " + orderId);
-        } else {
-            System.out.println("Found Transactions for Order ID: " + orderId);
-        }
-        return result;
-    }
-
-    // Mendapatkan transaksi berdasarkan ID
-    public Optional<Transaction> getTransactionById(Long id) {
-        Optional<Transaction> transaction = transactionRepository.findById(id);
-        if (transaction.isPresent()) {
-            System.out.println("Found Transaction for ID: " + id);
-        } else {
-            System.out.println("No transaction found for ID: " + id);
-        }
-        return transaction;
+        return transactionRepository.findByOrderId(orderId);
     }
 
     // Mendapatkan transaksi berdasarkan jenis transaksi
@@ -78,10 +61,23 @@ public class TransactionService {
 
     // Mendapatkan transaksi berdasarkan jenis transaksi dan channel
     public List<Transaction> getTransactionsByTypeAndChannel(String transactionType, String channel) {
-        if ("Payment".equalsIgnoreCase(transactionType) || "Withdrawal".equalsIgnoreCase(transactionType)) {
-            return transactionRepository.findByTransactionTypeAndChannel(transactionType, channel);
+        return transactionRepository.findByTransactionTypeAndChannel(transactionType, channel);
+    }
+
+    // Mendapatkan transaksi berdasarkan amount
+    public List<Transaction> getTransactionsByAmount(Double amount) {
+        if (amount != null) {
+            return transactionRepository.findByAmount(amount);
         }
-        return getTransactionsByType(transactionType); // Default behavior jika bukan Payment atau Withdrawal
+        return List.of(); // Kembalikan list kosong jika amount null
+    }
+
+    // Mendapatkan transaksi berdasarkan customerEmail
+    public List<Transaction> getTransactionsByCustomerEmail(String customerEmail) {
+        if (customerEmail != null && !customerEmail.isEmpty()) {
+            return transactionRepository.findByCustomerEmail(customerEmail);
+        }
+        return List.of(); // Kembalikan list kosong jika email null atau kosong
     }
 
     // Mendapatkan transaksi berdasarkan rentang waktu
@@ -127,5 +123,34 @@ public class TransactionService {
         LocalDate now = LocalDate.now();
         LocalDate startOfMonth = now.withDayOfMonth(1);
         return transactionRepository.findByDateTimeBetween(startOfMonth.atStartOfDay(), now.atTime(23, 59, 59));
+    }
+
+    // Logika untuk filter dengan multiple kondisi
+    public List<Transaction> filterTransactions(String transactionType, String channel, String status, Double amount, String customerEmail) {
+        if (transactionType != null && channel != null && status != null) {
+            return transactionRepository.findByTransactionTypeAndChannel(transactionType, channel);
+        }
+
+        if (transactionType != null) {
+            return getTransactionsByType(transactionType);
+        }
+
+        if (channel != null) {
+            return getTransactionsByChannel(channel);
+        }
+
+        if (status != null) {
+            return getTransactionsByStatus(status);
+        }
+
+        if (amount != null) {
+            return getTransactionsByAmount(amount);
+        }
+
+        if (customerEmail != null) {
+            return getTransactionsByCustomerEmail(customerEmail);
+        }
+
+        return List.of(); // Kembalikan list kosong jika tidak ada filter yang diberikan
     }
 }
